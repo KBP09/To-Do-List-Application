@@ -68,33 +68,32 @@
         <div class="line-3">
             <hr>
         </div>
-        <div class="tasks">
-            <label class="checkbox-container">
-                <input type="checkbox" class="ui-checkbox">
-            </label>
-            <div class="info">
-                <h3>Task Name</h3>
-                <p>date</p>
-                <p id="description">Description</p>
+        <div class="tasks-container">
+            <div class="tasks">
+                <label class="checkbox-container">
+                    <input type="checkbox" class="ui-checkbox">
+                </label>
+                <div class="info">
+                    <h3>Task Name</h3>
+                    <p>date</p>
+                    <p id="description">Description</p>
+                </div>
             </div>
         </div>
         <div id="overlay" class="overlay"></div>
         <div id="task-input" class="popup">
             <h2 id="task-in-head">Enter Task Details</h2>
             <form id="task-form">
-              <input type="text" id="task-name" placeholder="Enter Task Name" required="">
-              <input type="date" id="task-date" placeholder="Enter Task Date" required="">
-              <input type="text" id="task-type" placeholder="Enter Task Type" required="">
-              <textarea name="description" id="task-desc" placeholder="Enter Task Description"></textarea>
-              <input type="text" id="task-priority" placeholder="Enter Task Priority" required="">
-              <input type="text" id="task-tags" placeholder="Tags (if any)">
-              <div id="action-btn">
-                <button id="task-submit"> Add Task
+                <input type="text" id="task-name" placeholder="Enter Task Name" required="">
+                <input type="date" id="task-date" placeholder="Enter Task Date" required="">
+                <textarea name="description" id="task-desc" placeholder="Enter Task Description"></textarea>
+
+                <button class="task-submit" id="Add"> Add Task
                 </button>
-                <button id="task-cancel">Cancel</button>
-              </div>
-            </form>
-          </div>
+                <button class="task-submit" id="Cancel">Cancel</button>
+        </div>
+        </form>
+        </div>
     </main>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

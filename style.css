@@ -163,7 +163,7 @@
     opacity: 1;
 }
 
-.tasks{
+.tasks {
     height: 130px;
     margin: 20px 40px;
     padding: 10px 20px;
@@ -173,11 +173,12 @@
     display: flex;
     align-items: center;
 }
-.checkbox-container{
+
+.checkbox-container {
     margin-left: 10px;
 }
 
-.info{
+.info {
     margin-left: 20px;
 }
 
@@ -185,12 +186,12 @@
 .popup {
     display: none;
     position: absolute;
-    top: 50px; /* Adjust as needed */
-    left: 50%; /* Center horizontally */
+    top: 50px;
+    left: 50%;
     transform: translateX(-50%);
-    width: 300px; /* Adjust as needed */
+    width: 300px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(33 37 41);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     z-index: 1000;
@@ -206,3 +207,91 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
 }
+
+#task-desc{
+    max-height: 100px;
+    min-height: 50px;
+    padding: 4px;
+}
+#task-name{
+    padding: 4px;
+}
+#task-date{
+    padding: 4px;
+}
+.task-submit{
+  position: relative;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.task-submit:hover{
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.task-submit:hover::before{
+    -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+.task-submit::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .task-submit:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+
+  #task-in-head{
+    color: white;
+  }
