@@ -1,4 +1,4 @@
-let pending = 1;
+let pending = 0;
 let completed = 0;
 
 const btn = document.querySelector(".button-29");
@@ -16,16 +16,21 @@ const addTaskBtn = document.getElementById("Add");
 const cancelTaskBtn = document.getElementById("Cancel");
 
 const taskCompleted = () => {
-    task.style.display = "none";
+    const task = event.target.closest('.tasks');
     pending--;
     completed++;
-    document.querySelector("#task-pending").innerText = `Task Pending: ${pending}`;
-    document.querySelector("#task-completed").innerText = `Task Completed: ${completed}`;
+    if (task) {
+        task.style.display = "none";
+        document.querySelector("#task-pending").innerText = `Task Pending: ${pending}`;
+        document.querySelector("#task-completed").innerText = `Task Completed: ${completed}`;
+    }
 };
 
-checkbox.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    taskCompleted();
+
+document.addEventListener('click', function(event) {
+    if (event.target && event.target.classList.contains('ui-checkbox')) {
+        taskCompleted();
+    }
 });
 
 const cancelTask = () => {
@@ -41,6 +46,8 @@ cancelTaskBtn.addEventListener('click', (evt) => {
 });
 
 const addTask = () => {
+    pending++;
+    document.querySelector("#task-pending").innerText = `Task Pending: ${pending}`;
     let taskname = document.querySelector("#task-name").value;
     let taskdate = document.querySelector("#task-date").value;
     let taskdesc = document.querySelector("#task-desc").value;
@@ -67,6 +74,7 @@ addTaskBtn.addEventListener('click', (evt) => {
     evt.preventDefault();
     addTask();
 });
+
 btn.addEventListener('click', function (event) {
     const taskInputDiv = document.getElementById('task-input');
     const overlay = document.getElementById('overlay');
@@ -85,10 +93,10 @@ const setDate = () => {
 };
 setDate();
 
-// const userName = () => {
-//     const user = prompt("Enter your user-name");
-//     if (user) {
-//         document.querySelector("#offcanvasDarkNavbarLabel").innerText=user;
-//     }
-// };
-// userName();
+const userName = () => {
+    const user = prompt("Enter your user-name");
+    if (user) {
+        document.querySelector("#offcanvasDarkNavbarLabel").innerText=user;
+    }
+};
+userName();
